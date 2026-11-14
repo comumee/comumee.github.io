@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>ComuMee｜大切な人と、本音で話したい(試作 v25)</title>
+<title>ComuMee｜大切な人と、本音で話したい(試作 v27)</title>
 <meta name="description" content="会話も、恋愛も、ふたりの身体の触れ合いも。男女の違いや一人ひとりの感じ方を、一人で動画で学べるオンラインスクール ComuMee。(比較用の試作ページ)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -462,6 +462,23 @@
 
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
 
+  /* 受講の流れ・学びの場 */
+  .study-chips { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .study-chips li { font-size: 13px; font-weight: 700; background: var(--paper); border-radius: 999px; padding: 5px 14px; }
+  .support { background: var(--paper); }
+  .support-head { max-width: 760px; }
+  .support-list { margin-top: 32px; display: grid; gap: 14px; }
+  @media (min-width: 760px) { .support-list { grid-template-columns: 1fr 1fr; gap: 18px; } }
+  .support-item { display: grid; gap: 8px; align-content: start; background: var(--bg); border-radius: 16px; padding: 22px 20px 24px; }
+  @media (min-width: 760px) { .support-item { padding: 28px 28px 30px; } }
+  .support-item .freq { justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--pink-text); border: 1px solid var(--pink-soft); background: var(--paper); border-radius: 999px; padding: 2px 12px; }
+  .support-item h3 { font-size: clamp(18px, 2vw, 20px); font-weight: 900; letter-spacing: .04em; line-height: 1.5; }
+  .support-item p { font-size: 15px; color: var(--ink-2); text-wrap: pretty; }
+  .support-item .freq { grid-row: 1; }
+  .support-item .for-plan { grid-row: 1; justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--paper); background: var(--main); border-radius: 999px; padding: 3px 12px; }
+  .support-item { grid-template-columns: auto 1fr; column-gap: 8px; }
+  .support-item h3, .support-item p { grid-column: 1 / -1; }
+  .support-note { margin-top: 12px; }
   /* 代表挨拶 */
   .t-msg { padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
   .t-msg p { font-size: 15px; color: var(--ink-2); line-height: 1.95; text-wrap: pretty; }
@@ -505,7 +522,7 @@
   <div class="wrap header-in">
     <a class="logo" href="#top" aria-label="ComuMee トップへ"><b>ComuMee</b><small>コミュミー</small></a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#themes">学べる内容</a><a href="#sex">触れ方・セックス</a><a href="#week">入会後の学び方</a><a href="#voices">受講生の声</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a><a href="#founder">代表挨拶</a>
+      <a href="#themes">学べる内容</a><a href="#sex">触れ方・セックス</a><a href="#week">受講の流れ</a><a href="#voices">受講生の声</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a><a href="#founder">代表挨拶</a>
     </nav>
     <a class="btn btn-sub" href="#pricing">プランと料金</a>
   </div>
@@ -595,17 +612,35 @@
     </div>
   </section>
 
-  <!-- 4 スタンダードに入って、最初の1週間 -->
+  <!-- 4 受講の流れ -->
   <section class="sec week" id="week" aria-labelledby="week-title">
     <div class="wrap narrow">
-      <h2 class="h2" id="week-title"><span class="ph">スタンダードに入ったら、</span><span class="ph">最初の1週間はこう学びます。</span></h2>
-      <p class="lead">最初の講義は<span class="nw">「言えば、伝わる？」</span>。1週間で見る動画は、2本で約17分です。</p>
+      <h2 class="h2" id="week-title">受講の流れ</h2>
+      <p class="lead">講義は動画で学びます。スマホがあれば、<span class="ph">通勤中や家事の合間、</span><span class="ph">寝る前など、</span><span class="ph">すきま時間に身につけられます。</span></p>
+      <ul class="study-chips" aria-label="動画で学ぶよさ"><li>スマホで見られる</li><li>通勤中やすきま時間に</li></ul>
       <ol class="week-flow">
-        <li><span class="wk">理解編<small>約12分</small></span><div><h3>会話を成り立たせる、5つの要素</h3><p>同じ「大丈夫」でも、声や表情で違って聞こえる理由を知ります。</p></div></li>
-        <li><span class="wk">ケーススタディ編<small>約5分</small></span><div><h3>どこでずれたのか、どう直すか</h3><p>対面、LINE、職場の3つのケースで考えます。</p></div></li>
-        <li class="wk-try"><span class="wk">次の会話で</span><div><h3>一言、確かめる。</h3><p>待ち合わせの前に<span class="nw">「10時、だよね？」</span>と聞き返してみる。</p></div></li>
+        <li><span class="wk">理解編<small>約12分</small></span><div><h3>考え方を知る</h3><p>たとえば最初の講義では、同じ「大丈夫」でも、声や表情で違って聞こえる理由を知ります。</p></div></li>
+        <li><span class="wk">ケーススタディ編<small>約5分</small></span><div><h3>身近な場面で考える</h3><p>対面、LINE、職場などのケースで、どこでずれたのか、どう直すかを考えます。</p></div></li>
+        <li class="wk-try"><span class="wk">次の会話で</span><div><h3>日常で試す</h3><p>たとえば待ち合わせの前に<span class="nw">「10時、だよね？」</span>と聞き返してみる。</p></div></li>
       </ol>
-      <p class="note week-note">※ 時間は、W1の完成動画の長さです。毎週、このように理解編で考え方を知り、ケーススタディ編で身近な場面に当てはめます。</p>
+      <p class="note week-note">※ 時間は、最初の講義(コミュニケーションW1)の動画の長さです。</p>
+    </div>
+  </section>
+
+  <!-- 4-2 動画のほかの学びの場 -->
+  <section class="sec support" id="support" aria-labelledby="support-title">
+    <div class="wrap">
+      <div class="support-head">
+        <h2 class="h2" id="support-title"><span class="ph">動画のほかにも、</span><span class="ph">学べる場があります。</span></h2>
+        <p class="lead">わからないことを聞けて、実際の空気の中で学べて、一緒に学ぶ仲間がいる。動画で知ったことを、ここで深めます。</p>
+        <p class="note support-note">質問箱とコミュニティは全プラン、勉強会はスタンダードとプレミアムで参加できます。</p>
+      </div>
+      <ul class="support-list">
+        <li class="support-item"><span class="freq">月1回以上</span><span class="for-plan">スタンダード以上</span><h3>オンライン勉強会</h3><p>動画で学んだテーマを、もう一歩深めます。</p></li>
+        <li class="support-item"><span class="freq">SNS・毎日のラジオで回答</span><span class="for-plan">全プラン</span><h3>質問箱</h3><p>動画でわからなかったところは、質問箱へ。スクールのSNSや、毎日配信のラジオで回答します。</p></li>
+        <li class="support-item"><span class="freq">対面</span><span class="for-plan">スタンダード以上</span><h3>オフライン勉強会</h3><p>研究や理論だけでは伝わりにくい、実際の距離感や空気感を、会って学びます。</p></li>
+        <li class="support-item"><span class="freq">受講生同士</span><span class="for-plan">全プラン</span><h3>コミュニティ</h3><p>同じテーマに向き合う受講生同士で交流できます。気づきを分け合える仲間がいます。</p></li>
+      </ul>
     </div>
   </section>
 
@@ -643,7 +678,7 @@
       <div class="plan-choose">
         <p><span class="ph">まずは、人との会話を学びたい方には</span><b>ライト</b>。</p>
         <p><span class="ph">気になる人を誘うときも、</span><span class="ph">付き合ってから気持ちがすれ違ったときも、</span><span class="ph">自分で考えて言葉を選べるようになりたい方には</span><b>スタンダード</b>。</p>
-        <p class="plan-choose-sub">恋愛・男女の違い、パートナーシップ、スキンシップと性までを、理解編とケーススタディ編で学べます。2ヶ月に1回の勉強会もあります。</p>
+        <p class="plan-choose-sub">恋愛・男女の違い、パートナーシップ、スキンシップと性までを、理解編とケーススタディ編で学べます。オンライン・オフラインの勉強会もあります。</p>
       </div>
 
       <div class="plans">
@@ -660,6 +695,8 @@
             <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>恋愛・男女の違い</span></li>
             <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>パートナーシップ</span></li>
             <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>スキンシップ</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>質問箱・コミュニティ</span></li>
+            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>オンライン・オフラインの勉強会</span></li>
           </ul>
           <a class="btn btn-main" href="https://utage-system.com/p/qsAQ0HdhpYFN">ライトの申込みへ<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <p class="check">月払い・年払いの選択と、税込のお支払い額は申込み画面で確認できます</p>
@@ -681,6 +718,9 @@
             <li class="sex-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>スキンシップ</b>(実際の触れ方・セックスの教材を含む)</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>理解編とケーススタディ編</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>2ヶ月に1回のオンライン勉強会(触れ方の直接指導あり)</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>オンライン勉強会(月1回以上)</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>オフライン勉強会</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>質問箱・コミュニティ</span></li>
           </ul>
           <div class="plan-next">
             <p class="plan-next-h">今後追加予定</p>
@@ -710,6 +750,9 @@
             <li class="sex-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>スキンシップ</b>(実際の触れ方・セックスの教材を含む)</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>理解編とケーススタディ編</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>2ヶ月に1回のオンライン勉強会(触れ方の直接指導あり)</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>オンライン勉強会(月1回以上)</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>オフライン勉強会</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>質問箱・コミュニティ</span></li>
             <li class="pre-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>個別セッション</b></span></li>
             <li class="pre-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>LINE相談</b></span></li>
           </ul>
@@ -789,7 +832,7 @@
 </main>
 
 <footer class="footer">
-  <p>© ComuMee(比較・確認用の試作 v25)</p>
+  <p>© ComuMee(比較・確認用の試作 v27)</p>
   <p>写真:Pexels(代表の写真を除く)</p>
 </footer>
 
