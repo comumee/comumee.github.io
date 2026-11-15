@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>ライトプラン｜ComuMee(試作 v07)</title>
+<title>ライトプラン｜ComuMee(試作 v09)</title>
 <meta name="description" content="まずは、日常の会話から。話を聞く・広げる・伝える基本を、動画で学べる ComuMee のライトプラン。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -624,6 +624,16 @@
   .cp .sub { margin-top: 4px; font-size: 13px; }
   .per-day { margin-top: 22px; font-size: 17px; font-weight: 700; line-height: 1.8; }
   .value-note { margin-top: 10px; }
+
+  /* こんな人におすすめ */
+  .rec-sec { background: var(--bg); }
+  .rec-list { margin-top: 28px; display: grid; gap: 10px; }
+  @media (min-width: 760px) { .rec-list { grid-template-columns: 1fr 1fr; gap: 12px; } }
+  .rec-list li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: start; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; font-size: 16px; font-weight: 700; line-height: 1.7; }
+  .rec-list svg { width: 22px; height: 22px; margin-top: 4px; color: var(--main); }
+
+  /* 料金:1日あたり */
+  .pricing .per-day { margin-top: 18px; text-align: center; font-size: 17px; font-weight: 700; line-height: 1.8; }
 </style>
 </head>
 <body>
@@ -769,15 +779,12 @@
     </div>
   </section>
 
-  <section class="sec value-sec" id="value" aria-labelledby="value-title">
+  <section class="sec rec-sec" id="recommend" aria-labelledby="rec-title">
     <div class="wrap">
-      <h2 class="h2" id="value-title"><span class="ph">コミュニケーションを、</span><span class="ph">1年かけて学べる価格です。</span></h2>
-      <div class="compare-price">
-        <div class="cp"><p class="lab">一般的なコミュニケーションスクール</p><p class="num">24万〜100万円</p></div>
-        <div class="cp us"><p class="lab">ComuMee ライト(1年間)</p><p class="num">85,800円</p><p class="sub">年払い・税抜｜月払いなら月7,800円</p></div>
-      </div>
-      <p class="per-day"><span class="ph">月払いでも、</span><span class="ph">1日あたり約260円。</span><span class="ph">通勤中や寝る前のすきま時間に、</span><span class="ph">続けて学べます。</span></p>
-      <p class="note value-note">※ コミュニケーションスクールの費用は、一般的な目安です。スクールや期間によって異なります。</p>
+      <h2 class="h2" id="rec-title">こんな人におすすめ</h2>
+      <ul class="rec-list">
+        <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">初対面の人と、</span><span class="ph">何を話せばいいか分からない方</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">会話が続かず、</span><span class="ph">気まずくなってしまう方</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">人前だと緊張して、</span><span class="ph">うまく話せなくなってしまう方</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">自分の考えや気持ちを、</span><span class="ph">相手にうまく伝えられない方</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">日常会話や仕事でも使える、</span><span class="ph">コミュニケーション力を</span><span class="ph">身につけたい方</span></span></li>
+      </ul>
     </div>
   </section>
 
@@ -790,6 +797,7 @@
           <button type="button" data-set="year" aria-pressed="false">年払い<small>1ヶ月分お得</small></button>
         </div>
         <p class="tax">表示価格はすべて税抜です。</p>
+        <p class="per-day"><span class="ph">月払いでも、</span><span class="ph">1日あたり約260円。</span><span class="ph">通勤中や寝る前のすきま時間に、</span><span class="ph">続けて学べます。</span></p>
       </div>
       <div class="plan-one">
         <article class="plan" id="plan-light" aria-labelledby="pl-light">
@@ -843,7 +851,7 @@
 </main>
 
 <footer class="footer">
-  <p>© ComuMee(ライトプラン紹介ページ 試作 v07)</p>
+  <p>© ComuMee(ライトプラン紹介ページ 試作 v09)</p>
   <p>写真:Pexels</p>
 </footer>
 
