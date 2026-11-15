@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>ライトプラン｜ComuMee(試作 v02)</title>
+<title>ライトプラン｜ComuMee(試作 v03)</title>
 <meta name="description" content="まずは、日常の会話から。話を聞く・広げる・伝える基本を、動画で学べる ComuMee のライトプラン。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -587,6 +587,43 @@
   .plan-one .plan { width: 100%; }
   .other-plan { margin-top: 26px; text-align: center; font-size: 15px; color: var(--ink-2); }
   .other-plan a { color: var(--main); font-weight: 700; }
+
+  /* v03 こんなこと、ありませんか？ */
+  .worry-sec { background: var(--bg); }
+  .worry-list { margin-top: 28px; display: grid; gap: 12px; }
+  @media (min-width: 760px) { .worry-list { grid-template-columns: 1fr 1fr; gap: 14px; } }
+  .worry-list li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: start; background: var(--paper); border-radius: 14px; padding: 16px 18px; font-size: 16px; font-weight: 700; line-height: 1.7; }
+  .worry-list svg { width: 22px; height: 22px; margin-top: 4px; color: var(--pink); }
+  .worry-close { margin-top: 26px; font-size: 16px; color: var(--ink-2); line-height: 1.9; }
+  /* v03 ライトで学べること */
+  .stats { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 640px; }
+  .stat { background: var(--bg); border-radius: 14px; padding: 16px 8px 14px; text-align: center; }
+  .stat b { display: block; font: 600 clamp(30px, 5vw, 42px)/1.1 var(--en); color: var(--main); letter-spacing: 0; }
+  .stat span { display: block; margin-top: 4px; font-size: 13px; font-weight: 700; color: var(--ink-2); }
+  .chapter-ex { font-size: 13px; color: var(--ink-3); }
+  @media (min-width: 900px) { #themes .course { grid-template-columns: 22em 1fr; } }
+  .cycles-wrap { margin-top: 48px; }
+  .cycles-h { font-size: clamp(19px, 2.2vw, 22px); font-weight: 900; letter-spacing: .04em; }
+  .cycles { margin-top: 18px; display: grid; gap: 12px; }
+  @media (min-width: 900px) { .cycles { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+  .cycle { background: var(--bg); border-radius: 16px; padding: 20px 20px 22px; }
+  .cyc-no { font-size: 13px; font-weight: 700; color: var(--pink-text); letter-spacing: .08em; }
+  .cycle h4 { margin-top: 4px; font-size: 18px; font-weight: 900; }
+  .cycle p { margin-top: 6px; font-size: 14px; color: var(--ink-2); }
+  .cycles-note { margin-top: 12px; }
+  /* v03 価格の比べ方 */
+  .value-sec { background: var(--paper); }
+  .compare-price { margin-top: 28px; display: grid; gap: 12px; max-width: 760px; }
+  @media (min-width: 760px) { .compare-price { grid-template-columns: 1fr 1fr; gap: 16px; } }
+  .cp { border-radius: 16px; padding: 22px 20px; background: var(--bg); text-align: center; border: 1px solid var(--line); }
+  .cp .lab { font-size: 14px; font-weight: 700; color: var(--ink-2); }
+  .cp .num { margin-top: 6px; font: 600 clamp(28px, 4.4vw, 38px)/1.2 var(--en); letter-spacing: 0; color: var(--ink-3); }
+  .cp.us { background: var(--main); border-color: var(--main); }
+  .cp.us .lab, .cp.us .sub { color: rgba(255,255,255,.85); }
+  .cp.us .num { color: #fff; }
+  .cp .sub { margin-top: 4px; font-size: 13px; }
+  .per-day { margin-top: 22px; font-size: 17px; font-weight: 700; line-height: 1.8; }
+  .value-note { margin-top: 10px; }
 </style>
 </head>
 <body>
@@ -603,7 +640,7 @@
   <div class="wrap header-in">
     <a class="logo" href="https://comumee.github.io/" aria-label="ComuMee トップへ"><b>ComuMee</b><small>コミュミー</small></a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#themes">学べること</a><a href="#week">受講の流れ</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a>
+      <a href="#worry">こんな方に</a><a href="#themes">学べること</a><a href="#week">受講の流れ</a><a href="#pricing">料金</a><a href="#faq">よくある質問</a>
     </nav>
     <a class="btn btn-sub" href="#pricing">料金</a>
   </div>
@@ -627,21 +664,83 @@
     </div>
   </section>
 
+  <section class="sec worry-sec" id="worry" aria-labelledby="worry-title">
+    <div class="wrap">
+      <h2 class="h2" id="worry-title"><span class="ph">こんなこと、</span><span class="ph">ありませんか？</span></h2>
+      <ul class="worry-list">
+        <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">初対面の人と、</span><span class="ph">何を話せばいいか分からない</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">沈黙になると焦って、</span><span class="ph">会話が続かない</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">緊張すると、</span><span class="ph">言いたいことがうまく言えない</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">「伝えたつもり」なのに、</span><span class="ph">相手には伝わっていなかった</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">相談されても、</span><span class="ph">どう返せばいいか迷ってしまう</span></span></li><li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">意見が違うと、</span><span class="ph">言い返すか黙るかになってしまう</span></span></li>
+      </ul>
+      <p class="worry-close"><span class="ph">恋愛やパートナーとの関係の前に、</span><span class="ph">まずは毎日の会話から。</span><br><span class="ph">ライトは、コミュニケーションの土台を</span><span class="ph">1年かけて学ぶプランです。</span></p>
+    </div>
+  </section>
+
   <section class="sec courses" id="themes" aria-labelledby="themes-title">
     <div class="wrap">
       <div class="courses-head">
         <h2 class="h2" id="themes-title">ライトで学べること</h2>
-        <p class="lead">どの講座も、自分がどうしたいかを知る、相手の考えを聞く、二人の希望が違うときに話し合う。この3つを軸にしています。</p>
+        <p class="lead"><span class="ph">コミュニケーション研究をもとに、</span><span class="ph">7つの章を、</span><span class="ph">1年・52週かけて学びます。</span><span class="ph">毎週、理解編とケーススタディ編の</span><span class="ph">2本で学べます。</span></p>
+      </div>
+      <div class="stats">
+        <p class="stat"><b>7</b><span>つの章<br>&nbsp;</span></p>
+        <p class="stat"><b>52</b><span>週分の講座<br>&nbsp;</span></p>
+        <p class="stat"><b>約104</b><span>本の動画<br>(1年間)</span></p>
       </div>
       <ol class="course-list">
         <li class="course">
-          <div class="course-name"><span class="num">01</span><h3>日常の会話</h3></div>
+          <div class="course-name"><span class="num">01</span><h3><span class="ph">コミュニケーションの</span><span class="ph">仕組みを知る</span></h3></div>
           <div class="course-body">
-            <p class="scene"><span class="ph">「話すこと自体が、少し苦手。</span><span class="ph">沈黙になると、</span><span class="ph">何を言えばいいか分からなくなる。」</span></p>
-            <p class="learn">話を聞く・広げる・伝える基本と、ずれたときに一言で確かめる方法。</p>
+            <p class="learn">人と人の間で、言葉や表情がどう受け取られ、どう影響し合うのかを知ります。</p>
+            <p class="chapter-ex">たとえば:「伝えたのに伝わらない」を分析する</p>
+          </div>
+        </li>
+        <li class="course">
+          <div class="course-name"><span class="num">02</span><h3>自分を理解し、整える</h3></div>
+          <div class="course-body">
+            <p class="learn">自分の考え方や気持ち、緊張したときの反応のくせに気づき、整えます。</p>
+            <p class="chapter-ex">たとえば:自分の思考・感情・行動を観察する</p>
+          </div>
+        </li>
+        <li class="course">
+          <div class="course-name"><span class="num">03</span><h3>相手を理解する</h3></div>
+          <div class="course-body">
+            <p class="learn">思い込みや見方のくせに気づき、相手をより正確に理解します。</p>
+            <p class="chapter-ex">たとえば:「事実」と「自分の解釈」を分ける</p>
+          </div>
+        </li>
+        <li class="course">
+          <div class="course-name"><span class="num">04</span><h3>聞く・質問する・共感する</h3></div>
+          <div class="course-body">
+            <p class="learn">相手の話を受け取り、「分かってもらえた」と感じてもらえる聞き方を身につけます。</p>
+            <p class="chapter-ex">たとえば:相手が「理解された」と感じる応答を練習する</p>
+          </div>
+        </li>
+        <li class="course">
+          <div class="course-name"><span class="num">05</span><h3>自分を伝える</h3></div>
+          <div class="course-body">
+            <p class="learn">考えや気持ち、お願いしたいことを、相手を尊重しながら伝えます。</p>
+            <p class="chapter-ex">たとえば:伝わりやすい表現へ言い換える</p>
+          </div>
+        </li>
+        <li class="course">
+          <div class="course-name"><span class="num">06</span><h3>会話をつくる</h3></div>
+          <div class="course-body">
+            <p class="learn">話す・聞くを組み合わせて、会話を続け、ずれたときに立て直します。</p>
+            <p class="chapter-ex">たとえば:会話のキャッチボールをケースで練習する</p>
+          </div>
+        </li>
+        <li class="course">
+          <div class="course-name"><span class="num">07</span><h3>関係を築く・修復する</h3></div>
+          <div class="course-body">
+            <p class="learn">一度の会話を超えて、信頼を育て、すれ違いや衝突から関係を修復します。</p>
+            <p class="chapter-ex">たとえば:信頼・すれ違い・修復のケースを考える</p>
           </div>
         </li>
       </ol>
+      <div class="cycles-wrap">
+        <h3 class="cycles-h">1年の流れ</h3>
+        <ol class="cycles"><li class="cycle"><span class="cyc-no">1周目</span><h4>全体の地図をつかむ</h4><p>7つの章を1週ずつ学び、コミュニケーションの全体像をつかみます。</p></li><li class="cycle"><span class="cyc-no">2周目</span><h4>専門知識まで深める</h4><p>それぞれの章を、研究にもとづく知識まで掘り下げます。</p></li><li class="cycle"><span class="cyc-no">3周目</span><h4>実際の場面で使う</h4><p>初対面、緊張する場面、相談を受けるとき、意見がぶつかるときなど、日常の場面で使える形にします。</p></li></ol>
+        <p class="note cycles-note">※ 週ごとの内容は、制作の進み具合に合わせて入れかわることがあります。</p>
+      </div>
     </div>
   </section>
 
@@ -672,6 +771,18 @@
         <li class="support-item"><h3>質問箱</h3><p>動画でわからなかったところや、「自分の場合はどうだろう」と気になったことを送れます。スクールのSNSや毎日のラジオで回答するので、ほかの受講生の質問からも学べます。</p></li>
         <li class="support-item"><h3>コミュニティ</h3><p>受講生同士で交流できます。同じテーマに向き合う仲間と、学んだことや日常で気づいたことを分け合えます。</p></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="sec value-sec" id="value" aria-labelledby="value-title">
+    <div class="wrap">
+      <h2 class="h2" id="value-title"><span class="ph">コミュニケーションを、</span><span class="ph">1年かけて学べる価格です。</span></h2>
+      <div class="compare-price">
+        <div class="cp"><p class="lab">一般的なコミュニケーションスクール</p><p class="num">24万〜100万円</p></div>
+        <div class="cp us"><p class="lab">ComuMee ライト(1年間)</p><p class="num">85,800円</p><p class="sub">年払い・税抜｜月払いなら月7,800円</p></div>
+      </div>
+      <p class="per-day"><span class="ph">月払いでも、</span><span class="ph">1日あたり約260円。</span><span class="ph">通勤中や寝る前のすきま時間に、</span><span class="ph">続けて学べます。</span></p>
+      <p class="note value-note">※ コミュニケーションスクールの費用は、一般的な目安です。スクールや期間によって異なります。</p>
     </div>
   </section>
 
@@ -741,7 +852,7 @@
 </main>
 
 <footer class="footer">
-  <p>© ComuMee(ライトプラン紹介ページ 試作 v02)</p>
+  <p>© ComuMee(ライトプラン紹介ページ 試作 v03)</p>
   <p>写真:Pexels</p>
 </footer>
 
