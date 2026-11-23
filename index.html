@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>ComuMee｜大切な人と、本音で話したい(試作 v42)</title>
+<title>ComuMee｜大切な人と、本音で話したい(試作 v43)</title>
 <meta name="description" content="会話も、恋愛も、ふたりの身体の触れ合いも。男女の違いや一人ひとりの感じ方を、一人で動画で学べるオンラインスクール ComuMee。(比較用の試作ページ)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -581,6 +581,17 @@
   /* v42 「誰にも聞けない セックスのことも」を4つ目の分野として見せる */
   .sex-field { margin-bottom: 14px; }
   .sex-field .sex-field-name { font-size: clamp(19px, 2.2vw, 22px); font-weight: 900; letter-spacing: .04em; }
+
+  /* v43 毎月の更新 */
+  .update-sec { background: var(--paper); }
+  .update-list { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (min-width: 900px) { .update-list { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+  .update-list li { background: var(--bg); border-radius: 16px; padding: 20px 14px 18px; text-align: center; display: grid; gap: 6px; }
+  .update-list .u-name { font-size: 14px; font-weight: 900; letter-spacing: 0; line-height: 1.5; white-space: nowrap; }
+  @media (min-width: 900px) { .update-list .u-name { font-size: 16px; letter-spacing: .02em; } }
+  .update-list .u-num { font-size: 14px; font-weight: 700; color: var(--pink-text); }
+  .update-list .u-num b { font: 600 34px/1 var(--en); margin: 0 3px; }
+  .plans-slider .plan ul { align-content: start; }
 </style>
 </head>
 <body>
@@ -673,6 +684,17 @@
         <li class="topic"><span class="no">2</span><h3>「本当はこうしてほしい。<br><span class="ph">でも、相手を傷つけそうで</span><span class="ph">言えない。」</span></h3><p><span class="ph">心地よい触れ方を、</span><span class="ph">相手と確かめ合う方法。</span></p></li>
         <li class="topic"><span class="no">3</span><h3>「今日はしたくない。<br>断ったら嫌われるかな？」</h3><p>断る側の不安と、断られた側の受け止め方。両方の立場から、関係を傷つけない伝え方を考えます。</p></li>
       </ol>
+    </div>
+  </section>
+
+  <!-- 3-2 毎月の更新 -->
+  <section class="sec update-sec" id="update" aria-labelledby="update-title">
+    <div class="wrap">
+      <h2 class="h2" id="update-title"><span class="ph">毎月、新しい学びが</span><span class="ph">届きます。</span></h2>
+      <p class="lead"><span class="ph">4つの分野それぞれで、</span><span class="ph">毎月8本以上の動画を更新します。</span><span class="ph">入会したあとも、</span><span class="ph">いつでも新しい学びに出会えます。</span></p>
+      <ul class="update-list">
+        <li><span class="u-name">コミュニケーション</span><span class="u-num">毎月<b>8</b>本以上</span></li><li><span class="u-name">恋愛・男女の違い</span><span class="u-num">毎月<b>8</b>本以上</span></li><li><span class="u-name">パートナーシップ</span><span class="u-num">毎月<b>8</b>本以上</span></li><li><span class="u-name">スキンシップ</span><span class="u-num">毎月<b>8</b>本以上</span></li>
+      </ul>
     </div>
   </section>
 
@@ -838,10 +860,11 @@
           <p class="renew p-year"><span class="ph">1年分を一括でお支払い。</span><span class="ph">以後も毎年自動更新</span></p>
           <ul>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>日常の会話(コミュニケーションの基本)</span></li>
-            <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>恋愛・男女の違い</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>恋愛・男女の違い</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">マッチングアプリ・</span><span class="ph">出会いのツール</span></span></li>
             <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>パートナーシップ</span></li>
             <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>スキンシップ</span></li>
-            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>質問箱・コミュニティ</span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>質問箱</span></li>
             <li class="off"><svg aria-hidden="true"><use href="#i-minus"/></svg><span>オンライン・オフラインの勉強会</span></li>
           </ul>
           <a class="btn btn-main" href="https://utage-system.com/p/qsAQ0HdhpYFN">ライトの申込みへ<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -859,6 +882,7 @@
           <ul>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>コミュニケーションの基本</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>恋愛・男女の違い</b></span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">マッチングアプリ・</span><span class="ph">出会いのツール</span></span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>パートナーシップ</b></span></li>
             <li class="sex-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>スキンシップ</b>(実際の触れ方・セックスの教材を含む)</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>2ヶ月に1回のオンライン勉強会(触れ方の直接指導あり)</span></li>
@@ -889,6 +913,7 @@
           <ul>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>コミュニケーションの基本</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>恋愛・男女の違い</b></span></li>
+            <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><span class="ph">マッチングアプリ・</span><span class="ph">出会いのツール</span></span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>パートナーシップ</b></span></li>
             <li class="sex-item"><svg aria-hidden="true"><use href="#i-tick"/></svg><span><b>スキンシップ</b>(実際の触れ方・セックスの教材を含む)</span></li>
             <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>2ヶ月に1回のオンライン勉強会(触れ方の直接指導あり)</span></li>
@@ -975,7 +1000,7 @@
 </main>
 
 <footer class="footer">
-  <p>© ComuMee(比較・確認用の試作 v42)</p>
+  <p>© ComuMee(比較・確認用の試作 v43)</p>
   <p>写真:Pexels(代表の写真を除く)</p>
 </footer>
 
